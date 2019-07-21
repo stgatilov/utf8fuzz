@@ -10,13 +10,13 @@ runtest:
 
 OPTFLAGS += -O2
 
-CXX = clang++
-CXXFLAGS_NO_WERROR = $(OPTFLAGS) -g -Wall -Wno-gnu-array-member-paren-init -std=gnu++11 -stdlib=libc++ -msse4.1
-CXXFLAGS = $(CXXFLAGS_NO_WERROR) -Werror
-CC = clang
+CXX = g++
+CXXFLAGS_NO_WERROR = $(OPTFLAGS) -g -Wall -std=gnu++11 -msse4.1
+CXXFLAGS = $(CXXFLAGS_NO_WERROR)
+CC = gcc
 CFLAGS_NO_WERROR = $(OPTFLAGS) -g -Wall
-CFLAGS = $(CFLAGS_NO_WERROR) -Werror
-LDFLAGS = -g -liconv -stdlib=libc++
+CFLAGS = $(CFLAGS_NO_WERROR)
+LDFLAGS = -g
 
 OBJS = utf8fuzz.o validator.o verbosity.o aligned_alloc.o stangvik.o postgresql.o u8u16.o pg_wchar.o af_with_verbose_hack.o testset_standard.o testset_random.o testset_files.o
 
